@@ -9,3 +9,6 @@ After conducting basic EDA on our image data, we plan to first crop/resize image
 
 ## Post-Preprocessing and Modeling Draft
 For image data, we first split the images into training and validation sets. We stayed true to image removal, resizing (adjusted to 50 X 50), and grayscaling for the preprocessing section. After this, we constructed a Keras Sequential Model with 3 Convolutional Layers, with ReLU activation functions for the Convolutions and a sigmoid at the end for binary classification. Our model did better than we initially expected, however it showed later signs of overfitting. Out of 10 epochs, the model started overfitting around 6 epochs.
+
+
+** note, added the copy of image processing final model to add code so we can see the layers of each image as it goes through the model
