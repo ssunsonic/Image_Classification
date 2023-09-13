@@ -1,4 +1,4 @@
-# ECS171
+# ECS171 - Machine Learning Final Project
 
 Chihuahua vs Muffins
 
