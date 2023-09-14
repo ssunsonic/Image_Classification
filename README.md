@@ -152,7 +152,7 @@ KNN being a lazy learner is actually one of the prime reasons we chose to use th
 ## Conclusion
 As the upcoming generation in an age of emergent technologies, things such as machine learning models are becoming increasingly important to be aware of. There are still many things unknown about the capabilities of machine learning, but all of that starts from a base case. Through our project, we were able to personally observe how to implement machine learning models to do something as simple as discerning between a chihuahua or a muffin. We were able to experience how difficult certain implementations were, how different models behaved, and how important each preceding step was in the process. As mentioned in our discussion section, there were definitely aspects that could have been explored more if we had access to more time. We had underestimated how long it would take to implement certain features. For example, we were unable to implement image rotation which may have affected the training data and subsequently the overall results. We were also unable to print out classification reports for the CNNs. Further directions of this project could be to go back and figure out ways to achieve the things we couldn't end up doing. Additionally, we could expand the model to take in images of other dogs or baked goods. 
 
-## Colaboration
+## Collaboration
 **Allison Peng** (Code/Organizer): Facilitated group meetings and contributed to exploratory data analysis. Assisted in coding of preprocessing, wrote knn model, and a portion of the writeup of the project. 
 
 **Danish Rizvi** (Code/Nice Guy): Cleaned up data and preprocessed. Showcased model capability by displaying images and using the CNN to label them with classifications. 
