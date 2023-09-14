@@ -52,7 +52,8 @@ model = KNeighborsClassifier(n_neighbors=5, n_jobs=-1)
 ## Results
 ### Data Exploration
 When we initially looked into the dataset, there were three main observations we made regarding extraneous variables, variance between the amount of images per category, and assorted image dimensions. Firstly, there were several images that did not fall into either of the two class categories: muffin or chihuahua. Additionally, we noticed that there are 2199 muffin pictures while there are 3718 chihuahua pictures. Our last observation was the various sizes of the images found in the dataset. The figure below depicts the distribution of image sizes across the dataset prior to standardization. 
-![alt text]()
+
+![alt text](https://github.com/ssunsonic/ML_Project/blob/main/figures/Figure%201.png)
 
 ### Preprocessing
 Our preprocessing consists of three steps: (1) data splitting, (2) data transformation, and (3) data reduction. Before preprocessing the images themselves, we did a 80:20 split on the data into a training and testing set. Then to transform the data, we standardized the image dimensions across both sets to 50x50. As for data reduction, we opted to convert the images to greyscale. All of these steps were completed as shown in the following code block:
@@ -81,6 +82,33 @@ ds_val = ds_val.map(lambda image, label: (tf.image.rgb_to_grayscale(image), labe
 ### Model 2
 
 ### Model 3
+
+## Discussion
+### Data Exploration
+We chose to perform a manual data exploration analysis to gain a better understanding of the data for ourselves. Furthermore, we felt that it would've taken much longer to implement an automated process for certain things such as the removal of irrelevant images from the dataset. Although we started with 6000 images from the original dataset, we ended up with 4320. We admit that this was a lot of images to remove which could subsequently affect the model, but we felt that it was necessary to remove the images as they were, afterall, irrelevant to our objective.
+
+After removing several extraneous variables, we wanted to go through the data once more to ensure there was not a class imbalance. While we found a discrepancy of 481 images between the two (with there being more images of chihuahuas than muffins), we ultimately felt that this imbalance was not large enough for a need to compensate for.
+
+Lastly, we wanted to check the image sizes. As shown in the figure in the Results section, we did find a variety of image sizes, so we chose to reduce the size of all images to maintain consistency while also reducing computation cost. This is further discussed in the following preprocessing stage.
+
+### Preprocessing
+**Data Split**: Unfortunately, we found it difficult to split the dataset into training and testing after preprocessing the images, so we ended up splitting everything first. We acknowledge that this is generally bad practice and would've looked more into splitting the dataset if we had more time.
+
+**Data Transformation**: Because convolutional neural networks require that all images used for training be of the same size, we decided to standardize this. Thus, we chose to resize the images to 50x50 which would also minimize the runtime for our computers while still preserving the quality of the images. Regardless, we do recognize that other sizes of images would be better for model accuracy, however, we felt limited by both our personal computer and Google Colab resources. 
+
+**Data Reduction**: By converting the images to greyscale, we were able to simplify having three color channels into one. As with standardizing the data, converting the images also helped to limit the overall computational cost. We felt that preserving the shapes within the images were more important than the colors in the images. Greyscaling moreover helps with edge detection as the differences in color intensity is more drastic between pixels.
+
+**Additional Preprocessing**: In our original preprocessing methodology, we had considered applying more techniques for image augmentation such as image rotation. While we did not have enough time to do so, we had originally considered its implementation as image rotation would help diversify the training set. Rotating the image does not change the information on it, and for humans it is easy to tell they are the same photo. However, the algorithm does not perceive this the same way humans do and will consider it a separate case.   
+
+### Model 1
+
+### Model 2
+
+### Model 3
+
+## Conclusion
+
+## Colaboration
 
 ---
 
