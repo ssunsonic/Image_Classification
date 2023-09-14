@@ -21,7 +21,7 @@ When preprocessing our data, we focused on Data Transformation and Reduction met
 ([original source](https://medium.com/almabetter/data-preprocessing-techniques-6ea145684812))
 
 ### Model 1
-For the first model in our project, we built a CNN with 3 convolutional layers to extract the features of each image. Each convolutional layer uses ```relu``` as its activation function. We also made sure to include a hidden layer with 64 nodes, and because we are predicting binary outcomes, the output layer uses a ```sigmoid``` activation function.
+For the first model in our project, we built a CNN with 3 convolutional layers to extract the features of each image. Each convolutional layer uses ```relu``` as its activation function while the output layer uses a ```sigmoid``` activation function. We also made sure to include a hidden layer with 64 nodes.
 
 Implementation of Model 1:
 ```
@@ -36,7 +36,7 @@ model.add(layers.Dense(64, activation='relu'))
 model.add(layers.Dense(1, activation = 'sigmoid'))
 ```
 ### Model 2
-Similar to Model 1, Model 2 is a CNN instead with 2 convolution layers. Both layers use ```relu```, however, the hidden layer in Model two has 32 nodes. Again, the outcome layer utilizes a ```sigmoid``` activation function due to how we are predicting binary outcomes.
+Similar to Model 1, Model 2 is a CNN instead with 2 convolution layers. Both layers use ```relu```, however, the hidden layer in Model two has 32 nodes. Again, the outcome layer utilizes a ```sigmoid``` activation function.  
 
 Implementation of Model 2:
 ```
@@ -120,15 +120,21 @@ Lastly, we wanted to check the image sizes. As shown in the figure in the Result
 
 **Additional Preprocessing**: In our original preprocessing methodology, we had considered applying more techniques for image augmentation such as image rotation. While we did not have enough time to do so, we had originally considered its implementation as image rotation would help diversify the training set. Rotating the image does not change the information on it, and for humans it is easy to tell they are the same photo. However, the algorithm does not perceive this the same way humans do and will consider it a separate case.   
 
-### Model 1
+### Models 1 and 2 (Convolutional Neural Networks)
+We went with a CNN approach since it is the most commonly used model with analyzing images using machine learning techniques. In both models, each layer used the ```relu``` activation function because it is one of the most computationally effective of the activation functions, but because we are predicting binary outcomes, the output layer utilizes ```sigmoid``` instead. When we built the first CNN, it had three convolutional layers and one dense layer that had 64 nodes. The exact reason we chose these parameters as our starting point is relatively arbitrary. However, initially we found that this led to overfitting of Model 1 because the training error started decreasing and the testing error starting increasing after 6 epochs out of 10. Thus, we figured we needed a less complex model for the data. Subsequently, Model 2 only had two convolutional layers and a dense layer with 32 nodes, lowering its overall complexity. 
 
-### Model 2
+However, during the writing process of this report, we decided we needed more figures to illustrate our points. In our initial collection of data, we did not record the loss and accuracy for Model 1. As such, we reran the models but ended up with varying results. The updated results are the ones listed above in the Results section while the figure below depicts the initial overfitting results we had for Model 1. Because the updated results were conducted fairly late in the actual analysis process, we were unable to accommodate for it in some of our analysis. This means that some of our reasoning for our actions were actually based on the data below rather than that listed in our Results section. An example of this would be our reasoning for lowering the complexity in Model 2. Simply looking at the data in our Results section contradicts our rationale, but the figure below provides more context.
 
-### Model 3
+![alt text](https://github.com/ssunsonic/ML_Project/blob/main/figures/Initial%20Model%201%20Loss.png?raw=true)
+
+An example of the structure of a convolutional neural network can be seen below.
 
 ![alt text](https://github.com/ssunsonic/ML_Project/blob/main/figures/Architecture%20of%20a%20CNN.png?raw=true)
 
 ([original source](https://towardsdatascience.com/convolutional-neural-networks-explained-9cc5188c4939))
+
+### Model 3 (K-Nearest Neighbors)
+
 
 ## Conclusion
 As the upcoming generation in an age of emergent technologies, things such as machine learning models are becoming increasingly important to be aware of. There are still many things unknown about the capabilities of machine learning, but all of that starts from a base case. Through our project, we were able to personally observe how to implement machine learning models to do something as simple as discerning between a chihuahua or a muffin. We were able to experience how difficult certain implementations were, how different models behaved, and how important each preceding step was in the process. As mentioned in our discussion section, there were definitely aspects that could have been explored more if we had access to more time. We had underestimated how long it would take to implement certain features. For example, we were unable to implement image rotation which may have affected the training data and subsequently the overall results. We were also unable to print out classification reports for the CNNs. Further directions of this project could be to go back and figure out ways to achieve the things we couldn't end up doing. Additionally, we could expand the model to take in images of other dogs or baked goods. 
