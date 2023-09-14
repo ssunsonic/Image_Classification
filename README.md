@@ -16,6 +16,10 @@ To explore our data, we chose to do a manual analysis of the dataset, carefully 
 ### Preprocessing
 When preprocessing our data, we focused on Data Transformation and Reduction methods.
 
+![alt text](https://github.com/ssunsonic/ML_Project/blob/main/figures/Data%20Preprocessing%20Types.png?raw=true)
+
+([original source](https://medium.com/almabetter/data-preprocessing-techniques-6ea145684812))
+
 ### Model 1
 For the first model in our project, we built a CNN with 3 convolutional layers to extract the features of each image. Each convolutional layer uses ```relu``` as its activation function. We also made sure to include a hidden layer with 64 nodes, and because we are predicting binary outcomes, the output layer uses a ```sigmoid``` activation function.
 
@@ -82,14 +86,22 @@ ds_val = ds_val.map(lambda image, label: (tf.image.rgb_to_grayscale(image), labe
 ```
 
 ### Model 1
+After running the first CNN model, these were the results of Model 1: ```loss: 0.4758 - accuracy: 0.8040```.
+
+![alt text](https://github.com/ssunsonic/ML_Project/blob/main/figures/Model%201%20Loss.png?raw=true)
 
 ### Model 2
+When running the next CNN model, these were the results of Model 2: ```loss: 0.3458 - accuracy: 0.8202```.
+
+![alt text](https://github.com/ssunsonic/ML_Project/blob/main/figures/Model%202%20Loss.png?raw=true)
 
 ### Model 3
+For the KNN model, our accuracy was ```0.5023148148148148```. The figure below shows Model 3's classification report.
 
 ![alt text](https://github.com/ssunsonic/ML_Project/blob/main/figures/KNN%20Classification%20Report.PNG?raw=true)
 
-The final model we would choose is the convolutional neural network model with two convolutional layers and one dense layer. We saw that this model had the highest accuracy at around 85%, the least loss at 0.3966, and the least overfitting. While this was expected, it was beneficial to compare models as we weren’t sure how the model would respond to images that are similar in features. It appears that a less complex model, but more complex than k-nearest neighbors, was best for our dataset. 
+### Final Results
+The final model we would choose is the convolutional neural network model with two convolutional layers and one dense layer, or Model 2. We saw that this model had the highest accuracy at around 82%, the least loss at 0.3458, and the least overfitting. While this was expected, it was beneficial to compare models as we weren’t sure how the model would respond to images that were similar in features. It appears that we were able to find a nice middle ground with a less complex model that was still more complex than k-nearest neighbors, which ended up being the best for our dataset.
 
 ## Discussion
 ### Data Exploration
@@ -114,10 +126,12 @@ Lastly, we wanted to check the image sizes. As shown in the figure in the Result
 
 ### Model 3
 
-## Conclusion
-As the upcoming generation in an age of emergent technologies, things such as machine learning models are becoming increasingly important to be aware of. There are still many things unknown about the capabilities of machine learning, but all of that starts from a base case. Through our project, we were able to personally observe how to implement machine learning models to do something as simple as discerning between a chihuahua or a muffin. We were able to experience how difficult certain implementations were, how different models behaved, and how important each preceding step was in the process. As mentioned in our discussion section, there were definitely aspects that could have been explored more if we had access to more time. We had underestimated how long it would take to implement certain features. For example, we were unable to implement image rotation which may have affected the training data and subsequently the overall results. We were also unable to print out classification reports for the CNNs.
+![alt text](https://github.com/ssunsonic/ML_Project/blob/main/figures/Architecture%20of%20a%20CNN.png?raw=true)
 
-Further directions of this project could be to go back and figure out ways to achieve the things we couldn't end up doing. Additionally, we could expand the model to take in images of other dogs or baked goods. 
+([original source](https://towardsdatascience.com/convolutional-neural-networks-explained-9cc5188c4939))
+
+## Conclusion
+As the upcoming generation in an age of emergent technologies, things such as machine learning models are becoming increasingly important to be aware of. There are still many things unknown about the capabilities of machine learning, but all of that starts from a base case. Through our project, we were able to personally observe how to implement machine learning models to do something as simple as discerning between a chihuahua or a muffin. We were able to experience how difficult certain implementations were, how different models behaved, and how important each preceding step was in the process. As mentioned in our discussion section, there were definitely aspects that could have been explored more if we had access to more time. We had underestimated how long it would take to implement certain features. For example, we were unable to implement image rotation which may have affected the training data and subsequently the overall results. We were also unable to print out classification reports for the CNNs. Further directions of this project could be to go back and figure out ways to achieve the things we couldn't end up doing. Additionally, we could expand the model to take in images of other dogs or baked goods. 
 
 ## Colaboration
 **Allison Peng** (Code/Organizer): Facilitated group meetings and contributed to exploratory data analysis. Assisted in coding of preprocessing and a portion of the writeup of the project. 
@@ -126,7 +140,7 @@ Further directions of this project could be to go back and figure out ways to ac
 
 **Eric Sun** (Code/Formatter): Contributed to constructing CNN model architecture and development/testing.  Assisted in coding preprocessing techniques, EDA, and model accuracy. Formatted code in Google Colab and organized descriptions/file structure in GitHub for an easy to read, followable manner. 
 
-**Franklin Hong** (Code):
+**Franklin Hong** (Code): Helped preprocess data (grayscaling), contributed to CNN modeling, EDA, and debugging.
 
 **Mariel Cecilio** (Writer): Wrote and formatted the entire final write up, taking into account and revising group input.
 
