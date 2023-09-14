@@ -49,6 +49,13 @@ model.add(layers.Flatten())
 model.add(layers.Dense(32, activation='relu'))
 model.add(layers.Dense(1, activation = 'sigmoid'))
 ```
+We also wanted to view each convolutional layer, and printed out the first convolutional layer.
+```
+# # Getting Activations of first layer
+first_layer_activation = activations[0]
+print(first_layer_activation.shape)
+```
+
 ### Model 3
 The third and final model uses k-nearest neighbors (KNN) as an alternative approach. Despite trying to use 3, 4, and 5 neighbors for the model, the accuracy remained the same.
 
