@@ -89,6 +89,8 @@ ds_val = ds_val.map(lambda image, label: (tf.image.rgb_to_grayscale(image), labe
 
 ![alt text](https://github.com/ssunsonic/ML_Project/blob/main/figures/KNN%20Classification%20Report.PNG?raw=true)
 
+The final model we would choose is the convolutional neural network model with two convolutional layers and one dense layer. We saw that this model had the highest accuracy at around 85%, the least loss at 0.3966, and the least overfitting. While this was expected, it was beneficial to compare models as we weren’t sure how the model would respond to images that are similar in features. It appears that a less complex model, but more complex than k-nearest neighbors, was best for our dataset. 
+
 ## Discussion
 ### Data Exploration
 We chose to perform a manual data exploration analysis to gain a better understanding of the data for ourselves. Furthermore, we felt that it would've taken much longer to implement an automated process for certain things such as the removal of irrelevant images from the dataset. Although we started with 6000 images from the original dataset, we ended up with 4320. We admit that this was a lot of images to remove which could subsequently affect the model, but we felt that it was necessary to remove the images as they were, afterall, irrelevant to our objective.
